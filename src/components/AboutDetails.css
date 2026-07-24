@@ -1,0 +1,152 @@
+.about-details {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.intro-text span {
+  color: var(--accent-blue);
+  font-weight: 500;
+}
+
+.title-wrapper {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-bold {
+  font-size: clamp(4rem, 15vw, 12rem);
+  color: #333333;
+  letter-spacing: -2px;
+  z-index: 1;
+}
+
+.title-script {
+  font-size: clamp(3rem, 10vw, 8rem);
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  z-index: 2;
+  transform: rotate(-5deg);
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.about-me {
+  max-width: 800px;
+  margin-bottom: 4rem;
+}
+
+.about-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .title-script {
+    left: 20%;
+    top: 60%;
+  }
+}
+
+.details-col h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.2rem;
+}
+
+.job-title.text-script {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.job-date, .job-role {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.experience-item ul, .education-item {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.experience-item li {
+  margin-bottom: 0.2rem;
+}
+
+.personal-info-table {
+  width: 100%;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+}
+
+.personal-info-table td {
+  padding: 0.3rem 0;
+  vertical-align: top;
+  color: var(--text-secondary);
+}
+
+.personal-info-table td strong {
+  color: #111;
+  font-weight: 600;
+}
+
+.skills-list {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.skill-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Simple solid colors for the icons to match the design */
+.ps { background: #31A8FF; }
+.id { background: #FF3366; }
+.fg { background: #000000; }
+.ai { background: #FF9A00; }
+.ae { background: #9999FF; }
+.pr { background: #EA77FF; }

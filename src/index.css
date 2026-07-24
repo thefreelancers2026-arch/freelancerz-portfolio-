@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700;800;900&family=Antonio:wght@700&family=Sedgwick+Ave+Display&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Default: Dark Theme */
+  --bg-primary: #111111;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #FFFFFF;
+  --text-secondary: #888888;
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  --accent-gold: #E5C569;
+  --theme-accent: #E5C569; /* Default Dark: Gold */
+  
+  --font-display: 'Montserrat', sans-serif;
+  --font-tall: 'Antonio', sans-serif;
+  --font-condensed: 'Bebas Neue', sans-serif;
+  --font-script: 'Sedgwick Ave Display', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+body.light-theme {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F3F4F6;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --theme-accent: #818CF8; /* Light Theme: Soft Periwinkle Blue */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Typography Utilities */
+.text-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.text-script {
+  font-family: var(--font-script);
+  color: var(--accent-blue);
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border-light);
+  font-family: var(--font-tall);
+  text-transform: uppercase;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+/* Swiss Grid Base */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--text-primary);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: var(--text-primary);
+  color: #fff;
+}

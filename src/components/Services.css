@@ -1,0 +1,213 @@
+.services-section {
+  position: relative;
+  background-color: var(--bg-primary);
+  overflow: hidden; /* Prevent grain from overflowing */
+  padding: 6rem 2rem;
+  color: var(--text-primary);
+}
+
+/* Premium Grain Texture */
+.services-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* ---- LEFT COLUMN ---- */
+.services-left {
+  display: flex;
+  flex-direction: column;
+  padding-top: 160px; /* Pushes the text down a bit while leaving the right image alone */
+}
+
+.services-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+.services-title {
+  font-family: var(--font-condensed), 'Impact', 'Bebas Neue', 'Oswald', sans-serif;
+  font-stretch: condensed;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  border-left: 2px solid var(--text-primary);
+  padding-left: 1rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.services-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 480px;
+}
+
+/* Accordion */
+.services-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.accordion-item.open {
+  border-bottom-color: var(--border-color);
+}
+
+.accordion-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-primary);
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.accordion-item.open .accordion-title,
+.accordion-item.open .accordion-icon {
+  color: var(--theme-accent);
+}
+
+.accordion-title {
+  font-family: var(--font-condensed), 'Impact', 'Bebas Neue', 'Oswald', sans-serif;
+  font-stretch: condensed;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.accordion-icon {
+  color: var(--text-secondary);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Optional: rotate when open, or just keep it pointing up as in the screenshot */
+.accordion-icon.open {
+  transform: rotate(180deg);
+  color: var(--theme-accent);
+}
+
+.accordion-content-wrapper {
+  overflow: hidden;
+}
+
+.accordion-list {
+  list-style: none;
+  padding: 1.5rem 0 1.5rem 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accordion-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.check-icon {
+  color: var(--theme-accent);
+  flex-shrink: 0;
+}
+
+
+/* ---- RIGHT COLUMN ---- */
+.services-right {
+  position: relative;
+  height: 100%; /* Important for sticky to work across the whole section */
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky-image-container {
+  position: sticky;
+  top: 25vh; /* Pin to upper middle of screen */
+  width: 100%;
+  max-width: 400px;
+  height: 550px;
+  margin-left: auto;
+  perspective: 1000px; /* Add 3D perspective */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pinned-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  /* 3D tilt exactly like screenshot */
+  transform: rotateY(-15deg) rotateX(5deg) rotateZ(-5deg); 
+  box-shadow: 
+    -20px 20px 50px rgba(0, 0, 0, 0.5),
+    -5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-section {
+    padding: 3rem 1rem;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .services-right {
+    display: none;
+  }
+  .services-left {
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .services-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .services-desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}

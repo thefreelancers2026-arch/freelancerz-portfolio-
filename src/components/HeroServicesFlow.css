@@ -1,0 +1,75 @@
+.flow-container {
+  position: relative;
+}
+
+/* This is the track where the sticky image will live */
+.flow-sticky-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through to Hero and Services */
+  z-index: 50; /* Above Hero, below Services text ideally, or above both */
+}
+
+/* The sticky container locks to the viewport */
+.flow-sticky-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* The actual floating wrapper that rotates */
+.flow-floating-image-wrapper {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+/* Card faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The front face holds the portrait and the bubble */
+.card-face-front {
+  background-color: transparent;
+}
+
+/* The back face holds the services image and is rotated 180deg */
+.card-face-back {
+  background-color: transparent;
+  transform: rotateY(180deg);
+}
+
+.card-face-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Mobile & Tablet Responsive */
+@media (max-width: 1024px) {
+  .flow-sticky-track {
+    display: none; /* Hide floating image on mobile/tablet, we use the inline one */
+  }
+  .flow-sticky-viewport {
+    position: absolute;
+    top: 0;
+  }
+}

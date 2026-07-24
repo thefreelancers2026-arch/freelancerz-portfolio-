@@ -1,0 +1,190 @@
+/* ═══════════════════════════════════════════════════════
+   FREELANCERZ — Editorial Cinematic Intro
+   Visual + Typography compositions per frame.
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,200;1,300&display=swap');
+
+/* ── Overlay ── */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: #FAFAFA;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Every frame = full viewport ── */
+.intro-frame {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── SVG visual layer ── */
+.frame-visual {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.frame-visual svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── "YOUR" ownership label ── */
+.intro-your {
+  position: absolute;
+  font-family: var(--font-body);
+  font-weight: 200;
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+  letter-spacing: 0.15em;
+  color: #888;
+  opacity: 0;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  z-index: 2;
+}
+
+/* ── Giant Keyword ── */
+.intro-word {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(15vw, 19vw, 25vw);
+  line-height: 0.85;
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px #111;
+  letter-spacing: -0.04em;
+  opacity: 0;
+  user-select: none;
+  will-change: transform, opacity;
+  z-index: 2;
+}
+
+/* Frame 3 variant — filled for contrast */
+.intro-word--filled {
+  color: #111;
+  -webkit-text-stroke: 0;
+  font-size: clamp(9vw, 12vw, 16vw);
+}
+
+/* ── Thin architectural rules ── */
+.intro-line {
+  position: absolute;
+  background: rgba(17, 17, 17, 0.15);
+  opacity: 0;
+  z-index: 2;
+}
+.intro-line--h { height: 1px; width: 0; }
+.intro-line--v { width: 1px;  height: 0; }
+
+/* ── Frame counter ── */
+.intro-counter {
+  position: absolute;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: #ccc;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* ════════════════════════════════════════
+   FRAME 1 — YOUR IDEA
+   Left-aligned, blueprint bg, large outline
+   ════════════════════════════════════════ */
+#f-idea .intro-your    { top: 9vw; left: 8vw; }
+#f-idea .intro-word    { left: 6vw; bottom: 10vh; }
+#f-idea .f-line        { bottom: 8vh; left: 8vw; }
+#f-idea .intro-counter { top: 9vw; right: 8vw; }
+
+/* ════════════════════════════════════════
+   FRAME 2 — YOUR BRAND
+   Right-aligned, brand grid visual left
+   ════════════════════════════════════════ */
+#f-brand .intro-your    { top: 9vw; right: 8vw; }
+#f-brand .intro-word    { right: 5vw; top: 50%; transform: translateY(-55%); }
+#f-brand .intro-counter { bottom: 9vw; left: 8vw; }
+
+/* ════════════════════════════════════════
+   FRAME 3 — YOUR WEBSITE
+   Browser frame, centred type above
+   ════════════════════════════════════════ */
+#f-web .intro-your {
+  top: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#f-web .intro-word {
+  top: 12vh;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+#f-web .intro-counter { bottom: 6vh; left: 50%; transform: translateX(-50%); }
+
+/* ════════════════════════════════════════
+   FRAME 4 — YOUR GROWTH
+   Bottom-anchored type, growth curve above
+   ════════════════════════════════════════ */
+#f-growth .intro-your    { top: 9vw; left: 8vw; }
+#f-growth .intro-word    { left: 6vw; bottom: 6vh; }
+#f-growth .intro-counter { top: 9vw; right: 8vw; }
+
+/* ════════════════════════════════════════
+   FRAME 5 — FREELANCERZ
+   Pure brand. Only the logo. No visuals.
+   ════════════════════════════════════════ */
+#f-brand-reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-brand-word {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(7vw, 10vw, 13vw);
+  letter-spacing: -0.03em;
+  color: #111;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(3vh);
+  will-change: transform, opacity;
+  user-select: none;
+  text-align: center;
+}
+
+.intro-brand-dot { color: #3b82f6; }
+
+.intro-brand-tag {
+  font-family: var(--font-body);
+  font-weight: 200;
+  font-size: clamp(0.65rem, 1.1vw, 0.85rem);
+  letter-spacing: 5px;
+  color: #aaa;
+  text-transform: uppercase;
+  margin-top: 1.2rem;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+#f-brand-reveal .f-rule-t {
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#f-brand-reveal .f-rule-b {
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}

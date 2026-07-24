@@ -4,6 +4,7 @@ import Hero from './Hero';
 import Services from './Services';
 import About from './About';
 import portraitImg from '../assets/boys.png';
+import colourPortrait from '../assets/colour_boy.png';
 import './HeroServicesFlow.css';
 
 const HeroServicesFlow = () => {
@@ -100,7 +101,9 @@ const HeroServicesFlow = () => {
             {/* Front Face (Portrait + Bubble) */}
             <motion.div 
               className="card-face card-face-front"
+              style={{ position: 'relative' }}
             >
+              {/* Base B&W Image */}
               <motion.img 
                 src={portraitImg} 
                 alt="Anbuselvam & Avinash" 
@@ -109,6 +112,19 @@ const HeroServicesFlow = () => {
                 animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0, filter: 'blur(0px) brightness(1)' }}
                 transition={{ duration: 1.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 style={{ transformOrigin: "bottom center", perspective: '1000px', position: 'absolute' }}
+              />
+              
+              {/* Color Image Overlay (Hovers & Taps) */}
+              <motion.img 
+                src={colourPortrait} 
+                alt="Anbuselvam & Avinash in Color" 
+                className="card-face-image"
+                initial={{ opacity: 0, scale: 1.1, y: 60, rotateX: -20 }}
+                animate={{ opacity: 0, scale: 1, y: 0, rotateX: 0 }}
+                whileHover={{ opacity: 1 }}
+                whileTap={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                style={{ transformOrigin: "bottom center", perspective: '1000px', position: 'absolute', top: 0, left: 0, zIndex: 2 }}
               />
               
               <motion.div 

@@ -30,6 +30,7 @@
 .flow-floating-image-wrapper {
   position: absolute;
   transform-style: preserve-3d;
+  pointer-events: auto; /* Enable hover/touch events for the color overlay */
 }
 
 /* Card faces */

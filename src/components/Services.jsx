@@ -9,10 +9,13 @@ export const services = [
     id: 'website',
     title: '1. PREMIUM WEBSITE DESIGN',
     points: [
-      'Custom React & Framer development',
-      'High-converting landing pages',
-      'E-commerce solutions & integrations',
-      'Lightning-fast performance optimization'
+      'Business Websites',
+      'E-commerce Websites',
+      'Landing Pages',
+      'Portfolio Websites',
+      'Premium UI/UX',
+      'SEO Optimized',
+      'Mobile Responsive'
     ],
     image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop'
   },
@@ -20,34 +23,38 @@ export const services = [
     id: 'ai',
     title: '2. AI AUTOMATION',
     points: [
-      'Custom AI chatbots & assistants',
-      'Workflow automation & optimization',
-      'Data scraping & AI analysis',
-      'Seamless business tool integrations'
+      'Gmail Auto Reply',
+      'WhatsApp Automation',
+      'Telegram Automation',
+      'AI Chatbots',
+      'Lead Automation',
+      'Workflow Automation'
     ],
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop'
   },
   {
-    id: 'seo',
-    title: '3. SEO & DIGITAL GROWTH',
-    points: [
-      'On-page & off-page SEO strategy',
-      'Keyword research & content planning',
-      'Technical SEO & site health audits',
-      'Data-driven analytics & tracking'
-    ],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop'
-  },
-  {
     id: 'social',
-    title: '4. SOCIAL MEDIA CONTENT',
+    title: '3. SOCIAL MEDIA',
     points: [
-      'High-engagement short-form videos',
-      'Curated social media graphics',
-      'Content calendar & strategy formulation',
-      'Community management & audience growth'
+      'Instagram Handling',
+      'Content Creation',
+      'Video Shooting',
+      'Video Editing',
+      'Reels Creation'
     ],
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop'
+  },
+  {
+    id: 'seo',
+    title: '4. SEO',
+    points: [
+      'Website SEO',
+      'Google Ranking',
+      'Speed Optimization',
+      'Keyword Research',
+      'Performance Tracking'
+    ],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop'
   }
 ];
 

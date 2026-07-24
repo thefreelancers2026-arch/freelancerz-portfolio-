@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import portraitImg from '../assets/boys.png';
+import colourPortrait from '../assets/colour_boy.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -30,15 +31,25 @@ const Hero = () => {
           </motion.h1>
         </div>
 
-        {/* Center Column */}
         <div className="ref-col-center">
           <motion.div 
             className="ref-portrait-wrapper"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }} 
             transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ position: 'relative' }}
           >
             <img src={portraitImg} alt="Anbuselvam & Avinash" className="ref-portrait" />
+            <motion.img 
+              src={colourPortrait} 
+              alt="Anbuselvam & Avinash in Color" 
+              className="ref-portrait" 
+              style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }}
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              whileTap={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            />
           </motion.div>
         </div>
 

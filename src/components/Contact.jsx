@@ -23,7 +23,9 @@ const Contact = () => {
     const message = document.getElementById('message').value || 'No message provided';
 
     try {
-      const response = await fetch('https://n8n-production-be3e1.up.railway.app/webhook/contact-form', {
+      // Send the request to our Vercel Serverless API
+      // This is a same-origin request, so CORS is not an issue
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

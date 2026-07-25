@@ -33,9 +33,9 @@ const projects = [
 
   {
     title: 'Legal Associates',
-    subtitle: 'Law Firm Website',
+    subtitle: 'GST & Tax Consultation Website',
     category: 'Website Design • SEO',
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1400&q=80',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1400&q=80',
     link: '#'
   }
 ];

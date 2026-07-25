@@ -23,7 +23,7 @@ const Contact = () => {
     const message = document.getElementById('message').value || 'No message provided';
 
     try {
-      const response = await fetch('http://localhost:5678/webhook-test/contact-form', {
+      const response = await fetch('https://n8n-production-be3e1.up.railway.app/webhook/contact-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
